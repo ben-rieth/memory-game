@@ -1,6 +1,11 @@
+import Card from './components/Card';
+
 function Game() {
   return (
-    <h1>Memory Game</h1>
+    <div>
+      <h1>Memory Game</h1>
+      <Card />
+    </div>
   );
 }
 
