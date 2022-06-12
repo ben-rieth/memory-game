@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const Card = (props) => {
     const {
+        content,
         addPoint
     } = props;
 
@@ -19,7 +20,7 @@ const Card = (props) => {
     return (
         <div>
             <button onClick={onCardClick}>
-                Content
+                {content}
             </button>
         </div>
     );

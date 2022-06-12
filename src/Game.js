@@ -7,6 +7,9 @@ function Game() {
   const [bestScore, setBestScore] = useState(0);
   const [level, setLevel] = useState(0);
   const [lostGame, setLostGame] = useState(false);
+  const [cards, setCards] = useState(
+    ['a', 'b']
+  );
 
   const addPointToScore = () => {
     setScore(score + 1);
@@ -35,7 +38,7 @@ function Game() {
     <div>
       <h1>Memory Game</h1>
       <p>{score}</p>
-      <Card addPoint={addPointToScore}/>
+      <Card content={'a'} addPoint={addPointToScore}/>
     </div>
   );
 }
