@@ -48,7 +48,7 @@ function Game() {
   const nextLevel = () => {
     setLevel(level + 1);
     setLevelScore(0);
-    setCards(generateCards())
+    setCards(generateCards());
   }
 
   const gameLost = () => {
@@ -75,7 +75,8 @@ function Game() {
   return (
     <div>
       <h1>Memory Game</h1>
-      <p>{score}</p>
+      <p>Score: {score}</p>
+      <p>Level: {level-1}</p>
       {cards.map((card) => {
         return <Card 
                   key={card.id} 
