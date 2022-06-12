@@ -1,9 +1,11 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 import Card from './components/Card';
 
 function Game() {
+
   const [score, setScore] = useState(0);
+  const [levelScore, setLevelScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [level, setLevel] = useState(0);
   const [lostGame, setLostGame] = useState(false);
@@ -20,8 +22,15 @@ function Game() {
     ]
   );
 
+    useEffect(() => {
+      if (levelScore === cards.length) {
+        console.log("New level")
+      }
+    }, [levelScore, cards])
+
   const addPointToScore = () => {
     setScore(score + 1);
+    setLevelScore(levelScore + 1);
   }
 
   const setNewBestScore = () => {
@@ -30,6 +39,7 @@ function Game() {
 
   const nextLevel = () => {
     setLevel(level + 1);
+    setLevelScore(0);
   }
 
   const gameLost = () => {
