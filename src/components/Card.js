@@ -3,7 +3,7 @@ import { useState } from 'react';
 const Card = (props) => {
     const {
         content,
-        addPoint
+        onClick
     } = props;
 
     const [clicked, setClicked] = useState(false);
@@ -13,7 +13,7 @@ const Card = (props) => {
             console.log("You lose")
         } else {
             setClicked(true);
-            addPoint();
+            onClick();
         }   
     }
 

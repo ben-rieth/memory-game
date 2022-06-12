@@ -61,12 +61,25 @@ function Game() {
     setLevel(1);
   }
 
+  //this function randomizes the order of the cards each time a card is clicked
+  const shuffleCards = () => {
+    setCards(cards.sort((a, b) => 0.5 - Math.random()));
+  }
+
+  const onCardClick = () => {
+    addPointToScore();
+    shuffleCards();
+  }
+
   return (
     <div>
       <h1>Memory Game</h1>
       <p>{score}</p>
       {cards.map((card) => {
-        return <Card key={card.id} content={card.content} addPoint={addPointToScore} />
+        return <Card 
+                  key={card.id} 
+                  content={card.content} 
+                  onClick={onCardClick} />
       })}
     </div>
   );
