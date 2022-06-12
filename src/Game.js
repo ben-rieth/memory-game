@@ -1,5 +1,6 @@
 /* eslint-disable no-use-before-define */
 import {useState, useEffect} from 'react';
+import uniqid from 'uniqid';
 
 import Card from './components/Card';
 
@@ -13,7 +14,7 @@ function Game() {
       nextLevelCards.push(
         {
           content: num.toString(),
-          id: num
+          id: uniqid()
         }
       );
     }
