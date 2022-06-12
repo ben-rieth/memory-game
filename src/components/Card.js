@@ -1,15 +1,18 @@
 import { useState } from 'react';
 
-const Card = () => {
+const Card = (props) => {
+    const {
+        addPoint
+    } = props;
 
     const [clicked, setClicked] = useState(false);
 
     const onCardClick = () => {
         if (clicked) {
-            console.log("You lose");
+            console.log("You lose")
         } else {
             setClicked(true);
-            console.log("good job")
+            addPoint();
         }   
     }
 

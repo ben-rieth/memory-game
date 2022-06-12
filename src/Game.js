@@ -34,7 +34,8 @@ function Game() {
   return (
     <div>
       <h1>Memory Game</h1>
-      <Card />
+      <p>{score}</p>
+      <Card addPoint={addPointToScore}/>
     </div>
   );
 }
