@@ -3,14 +3,15 @@ import { useState } from 'react';
 const Card = (props) => {
     const {
         content,
-        onClick
+        onClick,
+        onSecondClick
     } = props;
 
     const [clicked, setClicked] = useState(false);
 
     const onCardClick = () => {
         if (clicked) {
-            console.log("You lose")
+            onSecondClick()
         } else {
             setClicked(true);
             onClick();

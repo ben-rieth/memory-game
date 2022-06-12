@@ -58,7 +58,8 @@ function Game() {
   const startNewGame = () => {
     setLostGame(false);
     setScore(0);
-    setLevel(1);
+    setLevelScore(0);
+    setLevel(2);
   }
 
   //this function randomizes the order of the cards each time a card is clicked
@@ -76,14 +77,25 @@ function Game() {
       <h1>Memory Game</h1>
       <p>Score: {score}</p>
       <p>Level: {level-1}</p>
-      {cards.map((card) => {
-        return <Card 
-                  key={card.id} 
-                  content={card.content} 
-                  onClick={onCardClick} />
-      })}
+      <p>Best Score: {bestScore}</p>
+
+      {lostGame ?
+        <div>
+          <h2>Game Over</h2>
+          <button onClick={startNewGame}>Play Again</button>
+        </div> : 
+        cards.map((card) => {
+          return <Card 
+                    key={card.id} 
+                    content={card.content} 
+                    onClick={onCardClick}
+                    onSecondClick={gameLost} />
+          })
+        }
     </div>
   );
+
+  
 }
 
 export default Game;
