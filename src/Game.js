@@ -5,9 +5,9 @@ import Card from './components/Card';
 
 function Game() {
 
-  const generateCards = () => {
+  const generateCards = (levelNum) => {
     let nextLevelCards = [];
-    const numCards = level * 2;
+    const numCards = levelNum * 2;
 
     for (let num of [...Array(numCards).keys()]) {
       nextLevelCards.push(
@@ -24,13 +24,14 @@ function Game() {
   const [score, setScore] = useState(0);
   const [levelScore, setLevelScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [level, setLevel] = useState(0);
+  const [level, setLevel] = useState(1);
   const [lostGame, setLostGame] = useState(false);
-  const [cards, setCards] = useState(generateCards());
+  const [cards, setCards] = useState(generateCards(1));
+  const [loading, setLoading] = useState(false);
 
   //this effect moves to the next level once all cards are guessed
   useEffect(() => {
-    if (levelScore === cards.length) {
+    if (levelScore === cards.length && level >= 1) {
       nextLevel();
     }
   });
@@ -47,7 +48,15 @@ function Game() {
   const nextLevel = () => {
     setLevel(level + 1);
     setLevelScore(0);
-    setCards(generateCards());
+    setCards(generateCards(level+1));
+    loadTime();
+  }
+
+  const loadTime = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   }
 
   const gameLost = () => {
@@ -60,6 +69,7 @@ function Game() {
     setScore(0);
     setLevelScore(0);
     setLevel(2);
+    loadTime();
   }
 
   //this function randomizes the order of the cards each time a card is clicked
@@ -73,26 +83,28 @@ function Game() {
   }
 
   return (
-    <div>
-      <h1>Memory Game</h1>
-      <p>Score: {score}</p>
-      <p>Level: {level-1}</p>
-      <p>Best Score: {bestScore}</p>
+    loading ? 
+      <h2>Loading</h2> : 
+      <div>
+        <h1>Memory Game</h1>
+        <p>Score: {score}</p>
+        <p>Level: {level}</p>
+        <p>Best Score: {bestScore}</p>
 
-      {lostGame ?
-        <div>
-          <h2>Game Over</h2>
-          <button onClick={startNewGame}>Play Again</button>
-        </div> : 
-        cards.map((card) => {
-          return <Card 
-                    key={card.id} 
-                    content={card.content} 
-                    onClick={onCardClick}
-                    onSecondClick={gameLost} />
-          })
-        }
-    </div>
+        {lostGame ?
+          <div>
+            <h2>Game Over</h2>
+            <button onClick={startNewGame}>Play Again</button>
+          </div> : 
+          cards.map((card) => {
+            return <Card 
+                      key={card.id} 
+                      content={card.content} 
+                      onClick={onCardClick}
+                      onSecondClick={gameLost} />
+            })
+          }
+      </div>
   );
 
   
