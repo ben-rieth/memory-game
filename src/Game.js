@@ -1,9 +1,7 @@
-
-
-function App() {
+function Game() {
   return (
     <h1>Memory Game</h1>
   );
 }
 
-export default App;
+export default Game;
