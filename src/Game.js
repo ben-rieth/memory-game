@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import {useState, useEffect} from 'react';
 import uniqid from 'uniqid';
 
