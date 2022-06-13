@@ -7,6 +7,7 @@ const CardContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: lightblue;
+    width: 20%;
 
     & > img {
         width: 100px;

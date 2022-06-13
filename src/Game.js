@@ -6,9 +6,13 @@ import Card from './components/Card';
 import images from './components/images';
 
 const GameBoard = styled.div`
-  display: grid;
+  ${'' /* display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 20px; */}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 `;
 
 function Game() {
