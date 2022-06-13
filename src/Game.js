@@ -1,15 +1,22 @@
 import {useState, useEffect} from 'react';
 import uniqid from 'uniqid';
+import styled from 'styled-components';
 
 import Card from './components/Card';
 import images from './components/images';
+
+const GameBoard = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+`;
 
 function Game() {
 
   const generateCards = (levelNum) => {
     let availableImages = [...images];
     let nextLevelCards = [];
-    const numCards = levelNum * 2;
+    const numCards = (levelNum * 2) + 2;
 
     for (let num of [...Array(numCards).keys()]) {
       let cardIndex = Math.floor(Math.random() * availableImages.length);
@@ -105,14 +112,16 @@ function Game() {
             <h2>Game Over</h2>
             <button onClick={startNewGame}>Play Again</button>
           </div> : 
-          cards.map((card) => {
-            return <Card 
-                      key={card.id} 
-                      image={card.image}
-                      caption={card.caption} 
-                      onClick={onCardClick}
-                      onSecondClick={gameLost} />
-            })
+          <GameBoard>
+            {cards.map((card) => {
+              return <Card 
+                        key={card.id} 
+                        image={card.image}
+                        caption={card.caption} 
+                        onClick={onCardClick}
+                        onSecondClick={gameLost} />
+              })}
+            </GameBoard>
           }
       </div>
   );

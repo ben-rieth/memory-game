@@ -36,7 +36,7 @@ const images = [
     },
     {
         url: PlanktonImage,
-        capiton: "Plankton"
+        caption: "Plankton"
     },
     {
         url: PearlImage,
