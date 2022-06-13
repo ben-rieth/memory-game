@@ -3,12 +3,10 @@ import uniqid from 'uniqid';
 import styled from 'styled-components';
 
 import Card from './components/Card';
+import LoadingScreen from './components/LoadingScreen';
 import images from './components/images';
 
 const GameBoard = styled.div`
-  ${'' /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; */}
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -52,6 +50,7 @@ function Game() {
   //this effect moves to the next level once all cards are guessed
   useEffect(() => {
     if (levelScore === cards.length && level >= 1) {
+      console.log("going to next level");
       nextLevel();
     }
   });
@@ -89,6 +88,7 @@ function Game() {
     setScore(0);
     setLevelScore(0);
     setLevel(1);
+    setCards(generateCards(1));
     loadTime();
   }
 
@@ -104,7 +104,7 @@ function Game() {
 
   return (
     loading ? 
-      <h2>Loading</h2> : 
+      <LoadingScreen level={level}/> : 
       <div>
         <h1>Memory Game</h1>
         <p>Score: {score}</p>
