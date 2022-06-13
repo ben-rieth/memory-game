@@ -2,22 +2,31 @@ import {useState, useEffect} from 'react';
 import uniqid from 'uniqid';
 
 import Card from './components/Card';
+import images from './components/images';
 
 function Game() {
 
   const generateCards = (levelNum) => {
+    let availableImages = images;
     let nextLevelCards = [];
     const numCards = levelNum * 2;
 
     for (let num of [...Array(numCards).keys()]) {
+      let cardIndex = Math.floor(Math.random() * availableImages.length);
+
       nextLevelCards.push(
         {
           content: num.toString(),
+          image: availableImages[cardIndex]["url"],
+          caption: availableImages[cardIndex]["caption"],
           id: uniqid()
         }
       );
-    }
 
+      availableImages.splice(cardIndex, 1);
+      
+    }
+    console.log(nextLevelCards)
     return nextLevelCards;
   }
 
