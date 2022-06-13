@@ -68,7 +68,7 @@ function Game() {
     setLostGame(false);
     setScore(0);
     setLevelScore(0);
-    setLevel(2);
+    setLevel(1);
     loadTime();
   }
 
