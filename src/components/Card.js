@@ -7,14 +7,19 @@ const CardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: lightblue;
+    background-color: #26B9C8;
     width: clamp(175px, 20vw, 250px);
+    border-radius: 10px;
 
     & > img {
         margin: auto;
         width: clamp(150px, 15vw, 200px);
         min-height: 200px;
         object-fit: contain;
+    }
+
+    & > p {
+        color: white;
     }
 
     &:hover {

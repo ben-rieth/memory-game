@@ -6,6 +6,7 @@ const HeaderContainer = styled.div`
     align-items: center;
     text-align: center;
     gap: 10px;
+    color: white;
 
     & > .scoreboard {
         display: flex;
@@ -16,6 +17,7 @@ const HeaderContainer = styled.div`
             padding: 10px;
             width: 15ch;
             text-align: center;
+            font-weight: 500;
         }
     }
 `;
