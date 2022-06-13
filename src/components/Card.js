@@ -2,12 +2,13 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: lightblue;
-    width: 20%;
+    width: clamp(150px, 20%, 250px);
 
     & > img {
         width: 100px;
