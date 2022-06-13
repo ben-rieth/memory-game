@@ -8,10 +8,11 @@ const CardContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: lightblue;
-    width: clamp(150px, 20%, 250px);
+    width: clamp(150px, 20vw, 250px);
 
     & > img {
-        width: 100px;
+        margin: auto;
+        width: 15vw;
     }
 
     &:hover {

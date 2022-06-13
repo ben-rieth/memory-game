@@ -8,6 +8,12 @@ import PearlImage from './../images/pearl.webp';
 import PlanktonImage from './../images/plankton.webp';
 import PuffImage from './../images/puff.webp';
 import SandyImage from './../images/sandy.webp';
+import LarryImage from './../images/larry.png';
+import BBImage from './../images/barnacle-boy.png';
+import DutchmanImage from './../images/dutchman.webp';
+import JenkinsImage from './../images/jenkins.png';
+import MMImage from './../images/mermaid-man.png';
+import RayImage from './../images/man-ray.webp';
 
 const images = [
     {
@@ -49,6 +55,30 @@ const images = [
     {
         url: SandyImage,
         caption: "Sandy"
+    },
+    {
+        url: LarryImage,
+        caption: "Larry the Lobster"
+    },
+    {
+        url: BBImage,
+        caption: "Barnacle Boy"
+    },
+    {
+        url: MMImage,
+        caption: "Mermaid Man"
+    },
+    {
+        url: DutchmanImage,
+        caption: "Flying Dutchman"
+    },
+    {
+        url: JenkinsImage,
+        caption: "Old Man Jenkins"
+    },
+    {
+        url: RayImage,
+        caption: "Man Ray"
     }
 ];
 
