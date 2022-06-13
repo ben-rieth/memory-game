@@ -94,13 +94,16 @@ function Game() {
   }
 
   //this function randomizes the order of the cards each time a card is clicked
-  const shuffleCards = () => {
-    setCards(cards.sort((a, b) => 0.5 - Math.random()));
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
 
   const onCardClick = () => {
     addPointToScore();
-    shuffleCards();
+    shuffle(cards);
   }
 
   return (
