@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 import Card from './components/Card';
 import LoadingScreen from './components/LoadingScreen';
-import Header from './components/Header'
+import Header from './components/Header';
+import GameOverScreen from './components/GameOverScreen';
 import images from './components/images';
 
 const GameBoard = styled.div`
@@ -112,10 +113,7 @@ function Game() {
       <div>
         <Header score={score} level={level} bestScore={bestScore} />
         {lostGame ?
-          <div>
-            <h2>Game Over</h2>
-            <button onClick={startNewGame}>Play Again</button>
-          </div> : 
+          <GameOverScreen onPlayAgainClick={startNewGame} /> : 
           <GameBoard>
             {cards.map((card) => {
               return <Card 
