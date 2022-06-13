@@ -7,7 +7,7 @@ import images from './components/images';
 function Game() {
 
   const generateCards = (levelNum) => {
-    let availableImages = images;
+    let availableImages = [...images];
     let nextLevelCards = [];
     const numCards = levelNum * 2;
 
@@ -26,7 +26,7 @@ function Game() {
       availableImages.splice(cardIndex, 1);
       
     }
-    console.log(nextLevelCards)
+
     return nextLevelCards;
   }
 
