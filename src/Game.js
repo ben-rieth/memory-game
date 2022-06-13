@@ -108,7 +108,8 @@ function Game() {
           cards.map((card) => {
             return <Card 
                       key={card.id} 
-                      content={card.content} 
+                      image={card.image}
+                      caption={card.caption} 
                       onClick={onCardClick}
                       onSecondClick={gameLost} />
             })

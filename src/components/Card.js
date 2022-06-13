@@ -1,8 +1,27 @@
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+
+    & > img {
+        width: 100px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+`;
 
 const Card = (props) => {
     const {
-        content,
+        image,
+        caption,
         onClick,
         onSecondClick
     } = props;
@@ -19,11 +38,10 @@ const Card = (props) => {
     }
 
     return (
-        <div>
-            <button onClick={onCardClick}>
-                {content}
-            </button>
-        </div>
+        <CardContainer onClick={onCardClick}>
+            <img src={image} alt={caption} />
+            <p>{caption}</p>
+        </CardContainer>
     );
 }
 
