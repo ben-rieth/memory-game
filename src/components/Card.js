@@ -20,6 +20,8 @@ const CardContainer = styled.div`
 
     & > p {
         color: white;
+        font-family: "Spongebob";
+        letter-spacing: 2px;
     }
 
     &:hover {

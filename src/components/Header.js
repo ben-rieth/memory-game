@@ -8,6 +8,11 @@ const HeaderContainer = styled.div`
     gap: 10px;
     color: white;
 
+    & > h1 {
+        font-family: "Spongebob";
+        letter-spacing: 3px;
+    }
+
     & > .scoreboard {
         display: flex;
         align-items: center;
