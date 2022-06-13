@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Card from './components/Card';
 import LoadingScreen from './components/LoadingScreen';
+import Header from './components/Header'
 import images from './components/images';
 
 const GameBoard = styled.div`
@@ -106,11 +107,7 @@ function Game() {
     loading ? 
       <LoadingScreen level={level}/> : 
       <div>
-        <h1>Memory Game</h1>
-        <p>Score: {score}</p>
-        <p>Level: {level}</p>
-        <p>Best Score: {bestScore}</p>
-
+        <Header score={score} level={level} bestScore={bestScore} />
         {lostGame ?
           <div>
             <h2>Game Over</h2>
