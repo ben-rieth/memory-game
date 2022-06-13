@@ -107,9 +107,10 @@ function Game() {
     shuffle(cards);
   }
 
-  return (
-    loading ? 
-      <LoadingScreen level={level}/> : 
+  if (loading) {
+    return <LoadingScreen level={level}/>;
+  } else {
+    return (
       <div>
         <Header score={score} level={level} bestScore={bestScore} />
         {lostGame ?
@@ -126,9 +127,8 @@ function Game() {
             </GameBoard>
           }
       </div>
-  );
-
-  
+    );
+  }  
 }
 
 export default Game;
