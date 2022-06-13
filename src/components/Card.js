@@ -8,16 +8,18 @@ const CardContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-color: lightblue;
-    width: clamp(150px, 20vw, 250px);
+    width: clamp(175px, 20vw, 250px);
 
     & > img {
         margin: auto;
-        width: 15vw;
+        width: clamp(150px, 15vw, 200px);
+        min-height: 200px;
+        object-fit: contain;
     }
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 `;
 
