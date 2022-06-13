@@ -5,10 +5,10 @@ const HeaderContainer = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 10px;
 
     & > .scoreboard {
         display: flex;
-        justify-content: space-around;
         align-items: center;
 
         & > p {

@@ -8,6 +8,12 @@ import Header from './components/Header';
 import GameOverScreen from './components/GameOverScreen';
 import images from './components/images';
 
+const GameContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
+
 const GameBoard = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -111,7 +117,7 @@ function Game() {
     return <LoadingScreen level={level}/>;
   } else {
     return (
-      <div>
+      <GameContainer>
         <Header score={score} level={level} bestScore={bestScore} />
         {lostGame ?
           <GameOverScreen onPlayAgainClick={startNewGame} /> : 
@@ -126,7 +132,7 @@ function Game() {
               })}
             </GameBoard>
           }
-      </div>
+      </GameContainer>
     );
   }  
 }
