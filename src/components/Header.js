@@ -17,13 +17,14 @@ const HeaderContainer = styled.div`
     & > .scoreboard {
         display: flex;
         align-items: center;
+        gap: 20px;
 
         & > p {
-            border: 1px solid lightblue;
-            padding: 10px;
-            width: 20ch;
+            padding: 10px 0 5px;
+            width: 16ch;
             text-align: center;
             font-weight: 500;
+            border-bottom: 5px dashed #4AEDFF;
         }
     }
 `;
