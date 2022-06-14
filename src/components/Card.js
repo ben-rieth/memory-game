@@ -18,6 +18,10 @@ const CardContainer = styled.div`
         object-fit: contain;
     }
 
+    & > hr {
+        width: 100%;
+    }
+
     & > p {
         color: white;
         font-family: "Spongebob";
@@ -52,6 +56,7 @@ const Card = (props) => {
     return (
         <CardContainer onClick={onCardClick}>
             <img src={image} alt={caption} />
+            <hr />
             <p>{caption}</p>
         </CardContainer>
     );
