@@ -7,10 +7,11 @@ const HeaderContainer = styled.div`
     text-align: center;
     gap: 10px;
     color: white;
+    margin-top: 10px;
 
-    & > h1 {
+    & > h1, p {
         font-family: "Spongebob";
-        letter-spacing: 3px;
+        letter-spacing: 2px;
     }
 
     & > .scoreboard {
@@ -20,7 +21,7 @@ const HeaderContainer = styled.div`
         & > p {
             border: 1px solid lightblue;
             padding: 10px;
-            width: 15ch;
+            width: 20ch;
             text-align: center;
             font-weight: 500;
         }
